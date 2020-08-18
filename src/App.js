@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Profile from './components/profile'
+import WelcomeBanner from './components/welcome.banner'
+import {LanguageContext} from './language.context'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props){
+    super(props)
+
+    this.toggle = () => {
+      this.setState(state => ({
+        language: state.language == "english" ? "french" : "english"
+      }))
+    }
+
+    this.state = {
+      language: "english"
+    }
+  }
+
+  render(){
+    return (
+      <LanguageContext.Provider value={this.state}>
+        <WelcomeBanner className="banner"/>
+        <center>
+          <button onClick={this.toggle}>{this.state.language === "english" ? "français" : "English"}</button>
+        </center>
+        <Profile 
+          name = "Satvinder Singh" 
+          email = "panesar.satvindersingh@gmail.com" 
+          summary = "5 years of software development experience"
+          frenchSummary = "5 ans d'expérience en développement logiciel"
+          imageURL = "https://satvinder-panesar.github.io/images/profile.png"/>
+      </LanguageContext.Provider>
+    );
+  }
+
 }
 
 export default App;
