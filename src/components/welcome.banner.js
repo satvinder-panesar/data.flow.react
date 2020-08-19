@@ -7,7 +7,7 @@ function WelcomeBanner() {
         <LanguageContext.Consumer>
             {({language}) => (
                 <Banner
-                title={language === "english" ? "Welcome" : "Bienvenue"} />
+                title={language === "english" ? "Welcome" : "bienvenu"} />
             )}
         </LanguageContext.Consumer>
     );
