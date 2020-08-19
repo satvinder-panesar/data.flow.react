@@ -3,6 +3,7 @@ import './App.css'
 import Profile from './components/profile'
 import WelcomeBanner from './components/welcome.banner'
 import {LanguageContext} from './language.context'
+import FooterBanner from './components/footer.banner';
 
 class App extends React.Component {
 
@@ -33,6 +34,7 @@ class App extends React.Component {
           summary = "5 years of software development experience"
           frenchSummary = "5 ans d'expérience en développement logiciel"
           imageURL = "https://satvinder-panesar.github.io/images/profile.png"/>
+        <FooterBanner className="banner"/>
       </LanguageContext.Provider>
     );
   }
