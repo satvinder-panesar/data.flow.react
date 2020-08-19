@@ -26,7 +26,7 @@ class App extends React.Component {
       <LanguageContext.Provider value={this.state}>
         <WelcomeBanner className="banner"/>
         <center>
-          <button onClick={this.toggle}>{this.state.language === "english" ? "français" : "English"}</button>
+          <button onClick={this.toggle}>{this.state.language === "english" ? "français" : "english"}</button>
         </center>
         <Profile 
           name = "Satvinder Singh" 
